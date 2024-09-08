@@ -30,15 +30,15 @@ class TaskListTile extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  '${task.time}', // Time always visible
+                  '${task.time}', 
                   style: TextStyle(fontSize: 16),
                 ),
               ),
               Text(
-                _getTaskStatusText(task), // Task status in "X/Y task(s) completed" format
+                _getTaskStatusText(task), 
                 style: TextStyle(
                   fontSize: 16,
-                  color: _getTaskStatusColor(task), // Color based on completion status
+                  color: _getTaskStatusColor(task), 
                 ),
               ),
               IconButton(
@@ -79,7 +79,7 @@ class TaskListTile extends StatelessWidget {
                       IconButton(
                         icon: Icon(Icons.edit, color: Colors.orange),
                         onPressed: () {
-                          // Handle edit task logic (if needed)
+                        
                         },
                       ),
                       IconButton(
@@ -105,11 +105,11 @@ class TaskListTile extends StatelessWidget {
   Color _getTaskStatusColor(Task task) {
     int completedTasks = _countCheckedTasks(task);
     if (completedTasks == 0) {
-      return Colors.grey; // No tasks completed
+      return Colors.grey; 
     } else if (completedTasks == task.items.length) {
-      return Colors.green; // All tasks completed
+      return Colors.green; 
     } else {
-      return Colors.orange; // Some tasks completed
+      return Colors.orange; 
     }
   }
 
@@ -117,9 +117,9 @@ class TaskListTile extends StatelessWidget {
     int completedTasks = _countCheckedTasks(task);
     int totalTasks = task.items.length;
     if (completedTasks == totalTasks && totalTasks > 0) {
-      return 'Completed'; // All tasks are done
+      return 'Completed'; 
     } else {
-      return '$completedTasks/$totalTasks task completed'; // Partial or no completion
+      return '$completedTasks/$totalTasks task completed'; 
     }
   }
 }
