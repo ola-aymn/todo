@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // For formatting time and date
+import 'package:intl/intl.dart'; 
 import '../task.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
@@ -20,7 +20,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
     return StatefulBuilder(
       builder: (BuildContext context, StateSetter setState) {
         return Container(
-          height: 600, // Fixed height for the bottom sheet
+          height: 600,
           child: Padding(
             padding: EdgeInsets.only(
               bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -31,7 +31,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Close icon in the top-right corner
+              
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -39,7 +39,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     IconButton(
                       icon: Icon(Icons.close, color: Colors.black),
                       onPressed: () {
-                        Navigator.pop(context); // Close the bottom sheet
+                        Navigator.pop(context); 
                       },
                     ),
                   ],
@@ -75,7 +75,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                 icon: Icon(Icons.add),
                                 onPressed: () {
                                   setState(() {
-                                    // Add a new task field
+                                  
                                     controllers.add(TextEditingController());
                                     newTasks.add(TaskItem(''));
                                   });
@@ -98,13 +98,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                         if (combinedTasks.isNotEmpty) {
                           widget.onTaskAdded(combinedTasks);
                         }
-                        // Clear input fields
+                        
                         controllers.clear();
                         newTasks.clear();
                         controllers.add(TextEditingController());
                         newTasks.add(TaskItem(''));
                       });
-                      Navigator.pop(context); // Close the bottom sheet
+                      Navigator.pop(context); 
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
