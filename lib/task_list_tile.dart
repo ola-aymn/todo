@@ -236,7 +236,7 @@ class _TaskListTileState extends State<TaskListTile> {
     if (completedTasks == totalTasks && totalTasks > 0) {
       return 'Completed';
     } else {
-      return '$completedTasks/$totalTasks task completed'; // Partial or no completion
+      return '$completedTasks/$totalTasks task completed'; 
     }
   }
 }
