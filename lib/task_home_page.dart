@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // For formatting time and date
+import 'package:intl/intl.dart'; 
 import '../task.dart';
 import '../task_list_tile.dart';
 import '../add_task_bottom_sheet.dart';
@@ -25,7 +25,7 @@ class _TaskHomePageState extends State<TaskHomePage> {
               List<TaskItem> combinedTasks = newTasks.where((task) => task.text.isNotEmpty).toList();
               if (combinedTasks.isNotEmpty) {
                 tasks.add(Task(
-                  DateTime.now().toString(), // Unique ID for each task
+                  DateTime.now().toString(),
                   combinedTasks,
                   DateFormat.jm().format(DateTime.now()),
                 ));
@@ -59,11 +59,11 @@ class _TaskHomePageState extends State<TaskHomePage> {
   Color _getTaskStatusColor(Task task) {
     int completedTasks = _countCheckedTasks(task);
     if (completedTasks == 0) {
-      return Colors.grey; // No tasks completed
+      return Colors.grey; 
     } else if (completedTasks == task.items.length) {
-      return Colors.green; // All tasks completed
+      return Colors.green; 
     } else {
-      return Colors.orange; // Some tasks completed
+      return Colors.orange; 
     }
   }
 
@@ -71,9 +71,9 @@ class _TaskHomePageState extends State<TaskHomePage> {
     int completedTasks = _countCheckedTasks(task);
     int totalTasks = task.items.length;
     if (completedTasks == totalTasks && totalTasks > 0) {
-      return 'Completed'; // All tasks are done
+      return 'Completed'; 
     } else {
-      return '$completedTasks/$totalTasks task completed'; // Partial or no completion
+      return '$completedTasks/$totalTasks task completed'; 
     }
   }
 
